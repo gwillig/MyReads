@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Tabs,Tab} from 'react-bootstrap';
 import BookCard from './BookCard'
-import {getAll, search, update} from "./BooksAPI";
+import {getAll, search,update} from "./BooksAPI";
 
 
 class Tabsbody extends React.Component {
@@ -39,25 +39,37 @@ class Tabsbody extends React.Component {
         console.log(book_id)
         console.log(select_shelf)
 
+
+
         this.setState(
             {books:this.state.books.map(book=>{
                     if (book.id === book_id){
+                        //Update locally
                         book.shelf = select_shelf
+                        // Update in Backend
+                        update(book,select_shelf)
+
                     }
                     return book
-                })            }
+
+                })
+            }
             )
+
         this.setState(
             {searchResult:this.state.searchResult.map(book=>{
                     if (book.id === book_id){
                         book.shelf = select_shelf
                         //Add Book to shelf
                         this.setState({books:[...this.state.books,book]})
+                        // Update in Backend
+                        update(book,select_shelf)
                     }
                     return book
                 })            }
         )
-        debugger
+
+
     }
 
 
@@ -77,11 +89,15 @@ class Tabsbody extends React.Component {
                     response.map(book_search_result=>{
                         this.state.books.map(book=>{
                             book_search_result.shelf="none"
+                            debugger
                             if(book.id===book_search_result.id){
+
                                 book_search_result.shelf=book.shelf
-                                return
                             }
+                            return  book
+
                         })
+                        return book_search_result
                     })
                     this.setState({ searchResult: response})
                     console.log(response)

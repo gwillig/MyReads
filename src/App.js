@@ -2,7 +2,7 @@ import React from 'react'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Tabsbody from './components/Tabs/Tabsbody'
-import Header from './components/Header/Header'
+import HeadSection from './components/Header/HeadSection'
 import { Row, Container, Col } from "react-bootstrap";
 
 class App extends React.Component {
@@ -16,15 +16,15 @@ class App extends React.Component {
     render() {
         return (
             <Container>
-                <Row>
+                <Row style={{backgroundColor:"#174687"}}>
                     <Col>
-                        <Header></Header>
+                        <HeadSection></HeadSection>
                     </Col>
                 </Row>
-                <Row>
-                    <Col>
+                <Row >
+
                         <Tabsbody></Tabsbody>
-                    </Col>
+
                 </Row>
                 <Row>
 

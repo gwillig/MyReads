@@ -196,5 +196,11 @@ button:active {
   text-align: center;
   font-size: 0.8em;
 }
+.nav-tabs{
+  background-color: rgb(23, 70, 135);
 
+}
+.nav-tabs .nav-item.nav-link.active{
+  background-color: #CEDFD4;
+}
 /**********************/
