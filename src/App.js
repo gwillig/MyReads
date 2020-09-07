@@ -3,6 +3,8 @@ import React from 'react'
 import './App.css'
 import Tabsbody from './components/Tabs/Tabsbody'
 import HeadSection from './components/Header/HeadSection'
+import Footer from './components/Footer/Footer'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Container, Col } from "react-bootstrap";
 
 class App extends React.Component {
@@ -15,21 +17,21 @@ class App extends React.Component {
 
     render() {
         return (
-            <Container>
-                <Row style={{backgroundColor:"#174687"}}>
+            <div>
+                <Row style={{backgroundColor:"#17a2b8"}}>
                     <Col>
                         <HeadSection></HeadSection>
                     </Col>
                 </Row>
-                <Row >
-
-                        <Tabsbody></Tabsbody>
-
+                <Row  style={{backgroundColor:"#17a2b8"}}>
+                    <Col>
+                    <Tabsbody></Tabsbody>
+                    </Col>
                 </Row>
-                <Row>
-
+                <Row noGutters={true}>
+                    <Footer></Footer>
                 </Row>
-            </Container>
+            </div>
         );
     }
 }

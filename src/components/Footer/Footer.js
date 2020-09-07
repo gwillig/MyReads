@@ -1,17 +1,23 @@
 import React from 'react'
-// import * as BooksAPI from './BooksAPI'
-import './App.css'
+import App from "../../App";
 
 class Footer extends React.Component {
-    state = {
-    }
+    state = {}
 
     render() {
+        const footer_style = {
+            backgroundColor: "#CEDFD4",
+            width: "100%"
+
+
+        }
         return (
-            <div className="app">
-                <h1>Footer</h1>
+            <div style={footer_style}>
+                <h5 style={{textAlign: "right"}}> © All rights reserved. Designed by Gustav Willig</h5>
             </div>
         )
+
+
     }
 }
 

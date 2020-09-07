@@ -1,7 +1,6 @@
-import React from "react";
-
-
-
+import React, { useState }  from "react"
+import {Button, Collapse} from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 class BookCard extends React.Component {
 
@@ -9,6 +8,8 @@ class BookCard extends React.Component {
 
     state = {
         book:this.props.book,
+        open: false,
+
     }
 
     getStyle = (book)=>{
@@ -19,6 +20,7 @@ class BookCard extends React.Component {
                 width: 128,
                 height: 192,
                 backgroundImage: `url(${book.book.imageLinks.thumbnail})`,
+
             }
         }
 
@@ -36,14 +38,18 @@ class BookCard extends React.Component {
     }
 
     render(){
-        console.log(this.state.book.shelf)
+        const { open } = this.state;
+
         // return(<h1>{this.state.book.shelf}</h1>)
         return (
             <li key={this.state.book.id}>
                 <div className="book">
                     <div className="book-top">
 
-                        <div className="book-cover" style={this.getStyle(this.state)}></div>
+                        <div className="book-cover" style={this.getStyle(this.state)}
+                             onClick={() => this.setState({open: !open})}
+                             aria-controls="example-collapse-text"
+                             aria-expanded={open}></div>
                         <div className="book-shelf-changer">
                             <select data-bookid= {this.state.book.id} value={this.state.book.shelf} onChange={this.handleChange.bind(this)}>
                                 <option value="move" disabled>Move to...</option>
@@ -57,6 +63,17 @@ class BookCard extends React.Component {
                     <div className="book-title">{this.state.book.title}</div>
                     <div className="book-authors">{this.state.book.authors?this.state.book.authors.toString():"Unkown"}</div>
 
+
+                    <div >
+                        <Collapse in={this.state.open}>
+                            <div id="example-collapse-text">
+                                {this.state.book.description.substring(0, 100)}
+                                <a href={`${this.state.book.previewLink}`} target="_blank">...[MORE]</a>
+
+
+                            </div>
+                        </Collapse>
+                    </div>
 
                 </div>
             </li>    )

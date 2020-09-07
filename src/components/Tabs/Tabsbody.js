@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Tabs,Tab} from 'react-bootstrap';
+import {Tabs,Tab, Row, Container, Col} from 'react-bootstrap';
 import BookCard from './BookCard'
 import {getAll, search,update} from "./BooksAPI";
 
@@ -110,15 +110,24 @@ class Tabsbody extends React.Component {
     }
 
     render() {
+        const tab_style={
 
+            minHeight:"65vh",
+            backgroundColor:"#CEDFD4"
+
+        }
+        const input_search_style={
+            margin:'10px'
+        }
 
         return (
-            <Tabs defaultActiveKey={this.state.tabs[0].defaultActiveKey} id="uncontrolled-tab-example">
+            <Tabs defaultActiveKey={"search"} id="uncontrolled-tab-example">
                 {/*Creates the three tabs "Current Reading, Want to Read, Read"*/}
                 {this.state.tabs.map(element=>{
                     console.log(element.defaultActiveKey)
                     return (
-                        <Tab key={element.id} eventKey={element.defaultActiveKey} title={element.title}>
+
+                        <Tab style={tab_style} key={element.id} eventKey={element.defaultActiveKey} title={element.title}>
                             <div className="bookshelf">
                                 <div className="bookshelf-books">
                                     <ol className="books-grid">
@@ -140,15 +149,14 @@ class Tabsbody extends React.Component {
                     )
 
                 })}
-                <Tab  eventKey="search" title="Search">
-                    <div className="bookshelf">
+                <Tab style={tab_style} eventKey="search" title="Search">
+                    <div className=" tab-item-wrapper" >
                         <div className="bookshelf-books">
                             <div key="searchField" className="input-group mb-3">
-                                <input onChange={this.searchBooks} type="text" className="form-control" placeholder="Search Author" />
+                                <input style={input_search_style} onChange={this.searchBooks} type="text" className="form-control" placeholder="Search Author" />
                             </div>
                             <ol className="books-grid">
                                 {
-
                                     this.state.searchResult.map((book)=>(
                                         <BookCard key={book.id}
                                                   book={book}
@@ -160,23 +168,6 @@ class Tabsbody extends React.Component {
                         </div>
                     </div>
                 </Tab>
-
-                {/*<Tab eventKey="search" title="Search">*/}
-                {/*    <div key="searchField" className="input-group mb-3">*/}
-                {/*        <input onChange={this.searchBooks} type="text" className="form-control" placeholder="Search Author" />*/}
-                {/*    </div>*/}
-                {/*    <div className="bookshelf">*/}
-                {/*        <div className="bookshelf-books">*/}
-                {/*            <ol className="books-grid">*/}
-                {/*                <BookCard*/}
-                {/*                    books={*/}
-                {/*                        this.state.searchResult*/}
-                {/*                    }*/}
-                {/*                ></BookCard>*/}
-                {/*            </ol>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</Tab>*/}
             </Tabs>
         );
     }

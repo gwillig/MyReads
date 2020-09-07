@@ -10,7 +10,7 @@ class HeadSection extends React.Component {
 
     render() {
         return (
-            <Jumbotron fluid style={this.style_head}>
+            <Jumbotron  style={this.style_head}>
                     <h1>My Reads</h1>
                     <h3>An app to ograinze your ebooks</h3>
             </Jumbotron>

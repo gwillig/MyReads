@@ -196,11 +196,23 @@ button:active {
   text-align: center;
   font-size: 0.8em;
 }
-.nav-tabs{
-  background-color: rgb(23, 70, 135);
-
+.nav-tabs .nav-item.nav-link{
+  color:white;
+  margin-left: 10px;
 }
 .nav-tabs .nav-item.nav-link.active{
   background-color: #CEDFD4;
+}
+input{
+  margin:10px;
+}
+.book-cover:hover{
+  cursor: pointer
+}
+
+.collapsing {
+  -webkit-transition: none;
+  transition: none;
+  display: none;
 }
 /**********************/
