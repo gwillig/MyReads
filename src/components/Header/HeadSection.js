@@ -8,11 +8,17 @@ class HeadSection extends React.Component {
         color:'rgb(255 255 255)'
     }
 
+    span_style={
+        color: "#63ff72",
+    }
+
     render() {
         return (
             <Jumbotron  style={this.style_head}>
-                    <h1>My Reads</h1>
-                    <h3>An app to ograinze your ebooks</h3>
+                    <h1>My Reads
+                    <span style={this.span_style}>.</span>
+                    </h1>
+                    <h3>The clever way to organise your ebooks</h3>
             </Jumbotron>
         )
     }

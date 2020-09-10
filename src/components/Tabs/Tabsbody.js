@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Tabs,Tab, Row, Container, Col} from 'react-bootstrap';
+import {Tabs,Tab} from 'react-bootstrap';
 import BookCard from './BookCard'
 import {getAll, search,update} from "./BooksAPI";
 

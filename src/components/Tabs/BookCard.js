@@ -68,7 +68,7 @@ class BookCard extends React.Component {
                         <Collapse in={this.state.open}>
                             <div id="example-collapse-text">
                                 {this.state.book.description.substring(0, 100)}
-                                <a href={`${this.state.book.previewLink}`} target="_blank">...[MORE]</a>
+                                <a href={`${this.state.book.previewLink}`} target="noreferrer">...[MORE]</a>
 
 
                             </div>

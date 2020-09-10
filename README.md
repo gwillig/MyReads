@@ -1,5 +1,5 @@
-# MyReads Project
-
+# MyReads. - The clever way to organise your ebooks
+My
 This help apps you to organise your ebooks. You can categorize your books in three shelves:
 * Currently Reading
 * Want to Read
@@ -56,3 +56,8 @@ These instructions cover the setup and installation on your local machine for de
 ### 2. Licenses
 * This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 * A Project [starter code](https://github.com/udacity/reactnd-project-myreads-starter) contributed by Udacity
+
+The following source where used for the img tags:
+* Icons: Source https://www.flaticon.com/authors/payungkead
+
+
