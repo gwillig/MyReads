@@ -1,5 +1,5 @@
 import React from 'react'
-// import * as BooksAPI from './BooksAPI'
+
 import './App.css'
 import Tabsbody from './components/Tabs/Tabsbody'
 import HeadSection from './components/Header/HeadSection'
@@ -24,7 +24,7 @@ class App extends React.Component {
                     </Col>
                 </Row>
                 <Row  style={{backgroundColor:"#17a2b8"}}>
-                    <Col>
+                    <Col style={{paddingRight:" 0px"}}>
                     <Tabsbody></Tabsbody>
                     </Col>
                 </Row>
