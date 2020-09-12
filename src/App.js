@@ -1,11 +1,11 @@
 import React from 'react'
-
 import './App.css'
-import Tabsbody from './components/Tabs/Tabsbody'
+import { Row, Col } from "react-bootstrap";
+import BookShelf from './components/body/BookShelf'
 import HeadSection from './components/Header/HeadSection'
 import Footer from './components/Footer/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Row, Container, Col } from "react-bootstrap";
+
 
 class App extends React.Component {
     constructor() {
@@ -25,7 +25,7 @@ class App extends React.Component {
                 </Row>
                 <Row  style={{backgroundColor:"#17a2b8"}}>
                     <Col style={{paddingRight:" 0px"}}>
-                    <Tabsbody></Tabsbody>
+                    <BookShelf></BookShelf>
                     </Col>
                 </Row>
                 <Row noGutters={true}>

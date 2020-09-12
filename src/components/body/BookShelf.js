@@ -5,7 +5,7 @@ import BookCard from './BookCard'
 import {getAll, search,update} from "./BooksAPI";
 
 
-class Tabsbody extends React.Component {
+class BookShelf extends React.Component {
 
     constructor (props) {
         super(props);
@@ -172,4 +172,4 @@ class Tabsbody extends React.Component {
         );
     }
 }
-export default Tabsbody
+export default BookShelf

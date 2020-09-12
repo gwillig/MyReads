@@ -1,10 +1,8 @@
-import React, { useState }  from "react"
-import {Button, Collapse} from 'react-bootstrap'
-import { Link } from 'react-router-dom';
+import React from "react"
+import { Collapse} from 'react-bootstrap'
+
 
 class BookCard extends React.Component {
-
-
 
     state = {
         book:this.props.book,
