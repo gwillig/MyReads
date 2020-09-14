@@ -58,6 +58,6 @@ These instructions cover the setup and installation on your local machine for de
 * A Project [starter code](https://github.com/udacity/reactnd-project-myreads-starter) contributed by Udacity
 
 The following source where used for the img tags:
-* Icons: Source https://www.flaticon.com/authors/payungkead
+* Icon: Source https://www.flaticon.com/authors/payungkead
 
 

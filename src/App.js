@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import { Row, Col } from "react-bootstrap";
-import BookShelf from './components/body/BookShelf'
+import BookShelf from './components/Body/BookShelf'
 import HeadSection from './components/Header/HeadSection'
 import Footer from './components/Footer/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';

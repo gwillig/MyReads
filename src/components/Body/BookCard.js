@@ -10,8 +10,7 @@ class BookCard extends React.Component {
 
     }
 
-    getStyle = (book)=>{
-
+    getStyle =(book)=>{
         //1.Step: Check if image_url is not empty
         if(book.book.imageLinks){
             return{
@@ -26,7 +25,6 @@ class BookCard extends React.Component {
     handleChange(e){
         /*@description:
             Detected change in select tag
-
         */
         //1.Step: Get the selected shelf for the book
         let select_shelf = e.target.value;
@@ -34,7 +32,18 @@ class BookCard extends React.Component {
         //2.Step: Call the parent function and handover the book and selected shelf
         this.props.handleChange(book_id,select_shelf)
     }
+    get_description= (book)=>{
+        debugger
+        try{
 
+           console.log( book.props.book.description)
+           let book_description =  book.props.book.description.substring(0, 100)
+           return book_description
+        }
+        catch(e){
+            return "No description"
+        }
+    }
     render(){
         const { open } = this.state;
 
@@ -65,7 +74,10 @@ class BookCard extends React.Component {
                     <div >
                         <Collapse in={this.state.open}>
                             <div id="example-collapse-text">
-                                {this.state.book.description.substring(0, 100)}
+                                {
+                                    this.get_description(this)
+                                }
+
                                 <a href={`${this.state.book.previewLink}`} target="noreferrer">...[MORE]</a>
 
 

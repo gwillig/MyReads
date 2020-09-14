@@ -89,7 +89,7 @@ class BookShelf extends React.Component {
                     response.map(book_search_result=>{
                         this.state.books.map(book=>{
                             book_search_result.shelf="none"
-                            debugger
+
                             if(book.id===book_search_result.id){
 
                                 book_search_result.shelf=book.shelf
@@ -99,6 +99,7 @@ class BookShelf extends React.Component {
                         })
                         return book_search_result
                     })
+                    debugger
                     this.setState({ searchResult: response})
                     console.log(response)
                 }
