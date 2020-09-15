@@ -7,8 +7,9 @@ This help apps you to organise your ebooks. You can categorize your books in thr
   
 Each book has a control that lets you select the shelf for that book. When you select a different shelf, the book moves there.
 The main page also has a link to /search, a search page that allows you to find books to add to your library.
-  
 
+
+![](readme_material/application.gif)
 This app was created for the Udacity React Nanodegree Program. The goal of the project was to gain more experience with the REACT Framework.
 
 1. Getting Started
