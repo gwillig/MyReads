@@ -43,6 +43,7 @@ These instructions cover the setup and installation on your local machine for de
             ├── BookCard.js
             ├── Books.API.js
             └── BookShelf.js
+            └── Searchpage.js
     ├── App.css # Styles for the app
     ├── App.js # This is the root of your app. Contains static HTML right now.
     ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.

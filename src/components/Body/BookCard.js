@@ -33,10 +33,10 @@ class BookCard extends React.Component {
         this.props.handleChange(book_id,select_shelf)
     }
     get_description= (book)=>{
-        debugger
+
         try{
 
-           console.log( book.props.book.description)
+
            let book_description =  book.props.book.description.substring(0, 100)
            return book_description
         }

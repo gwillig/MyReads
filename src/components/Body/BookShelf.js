@@ -1,5 +1,4 @@
 import React from 'react'
-
 import {Tabs,Tab} from 'react-bootstrap';
 import BookCard from './BookCard'
 import {getAll, search,update} from "./BooksAPI";
@@ -25,7 +24,7 @@ class BookShelf extends React.Component {
         getAll().then(
             response=>{
                 this.setState({ books: response})
-                console.log(response)
+
             }
         )
     }
@@ -36,8 +35,7 @@ class BookShelf extends React.Component {
             Changes for a given book the shelf
         * */
 
-        console.log(book_id)
-        console.log(select_shelf)
+
 
 
 
@@ -86,27 +84,44 @@ class BookShelf extends React.Component {
 
                     //1.Step: Set the shelf for each book
                     //1.1.Step: Check for every book in search result if it is already in shelf
-                    response.map(book_search_result=>{
-                        this.state.books.map(book=>{
-                            book_search_result.shelf="none"
+                    this.state.books.map(book=>{
+
+                        response.map(book_search_result=>{
+
+                            if(book.title==="Pro React"&&book_search_result.title==="Pro React"){
+                                book_search_result.shelf=book.shelf
+                                return  book_search_result
+
+                            }
+                            //===================
 
                             if(book.id===book_search_result.id){
 
                                 book_search_result.shelf=book.shelf
+                                return  book_search_result
                             }
-                            return  book
+                            //Check if book has already a shelf
+                            if(typeof book_search_result.shelf==='undefined'){
+                                book_search_result.shelf="none"
+                                return  book_search_result
+                            }
+                            return  book_search_result
 
                         })
-                        return book_search_result
+
+                        return book
                     })
-                    debugger
+
                     this.setState({ searchResult: response})
-                    console.log(response)
+
+
                 }
             })
 
         }
-
+        else{
+            this.setState({searchResult:[]})
+        }
 
     }
 
@@ -125,7 +140,7 @@ class BookShelf extends React.Component {
             <Tabs defaultActiveKey={"search"} id="uncontrolled-tab-example">
                 {/*Creates the three tabs "Current Reading, Want to Read, Read"*/}
                 {this.state.tabs.map(element=>{
-                    console.log(element.defaultActiveKey)
+
                     return (
 
                         <Tab style={tab_style} key={element.id} eventKey={element.defaultActiveKey} title={element.title}>
