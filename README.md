@@ -1,5 +1,5 @@
 # MyReads. - The clever way to organise your ebooks
-MyReads help apps you to organise your ebooks. You can categorize your books in three shelves:
+This app helps you to organise your ebooks. You can categorize your books in three shelves:
 * Currently Reading
 * Want to Read
 * Read
